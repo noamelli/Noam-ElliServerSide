@@ -1,0 +1,363 @@
+/* common design for both pages */
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: myFont;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(../static/Poppins/Poppins-Light.ttf);
+}
+/* header */
+
+header {
+    grid-area: header;
+    position: sticky;
+    background-color: #49738A;
+    top: 0;
+    grid-area: header;
+    box-shadow: 0 0 0.5vh black;
+}
+
+header nav {
+    padding: 0.5%;
+    text-align: center;
+    height: 16vh;
+    width: 100%;
+}
+
+header nav li {
+    display: inline;
+}
+
+header nav ul {
+    margin-top: 1.8%;
+}
+
+header nav li a {
+    color: black;
+    text-decoration: none;
+    padding: 2vw;
+    font-size: 2.3vw;
+}
+
+header nav li a:hover {
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+.active {
+    background-color: rgba(224, 224, 224, 0.75);
+    padding: 0.000001vh;
+}
+
+#logo {
+    height: 60%;
+    display: table;
+    float: left;
+    margin-left: 1%;
+    margin-top: 1%;
+    font-size: 3vh;
+}
+
+#logo h1 {
+    color: rgb(0, 0, 0);
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: monospace;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+#pageImage {
+    display: block;
+    margin-left: 10%;
+    margin-top: 1%;
+    border-radius: 200%;
+    float: left;
+    width: auto;
+    height: 11vh;
+    padding-left: 1%;
+}
+
+/* footer */
+footer {
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    grid-area: footer;
+    height: 23vh;
+    box-shadow: 0 0 0.5vh black;
+}
+
+.containerfooter {
+    max-width: 90%;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    text-align: left;
+    width: 25%;
+    margin-top: 1%;
+}
+
+.footer-col h4 {
+    font-size: 1%;
+    color: #000000;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.links li a:hover {
+    color: #49738A;
+    font-weight: bolder;
+
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 4%;
+}
+
+.footer-col ul li a {
+    font-size: 90%;
+    text-transform: capitalize;
+    color: #000000;
+    text-decoration: none;
+    display: block;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 10%;
+    border-radius: 50%;
+    margin-top: 4%;
+}
+
+.links {
+    margin-top: 2%;
+}
+
+.footer-col .social-links img {
+    display: inline-block;
+    height: 5VH;
+    width: 3VW;
+    text-align: left;
+    border-radius: 50%;
+    color: #000000;
+    opacity: 90%;
+}
+
+ul {
+    list-style: none;
+}
+
+/* home page */
+
+#gridContainerHomePage {
+    display: grid;
+    height: 150vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr 2fr 2fr 1fr;
+    grid-template-areas:
+        "header  header header"
+        "main  main main"
+        "main  main main"
+        "main  main main"
+        "footer  footer footer";
+}
+
+#aboutUs {
+    grid-area: main;
+    background-image: linear-gradient(rgba(102, 97, 97, 0.75), rgba(102, 97, 97, 0.75)), url(../static/background2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 160vh;
+}
+#aboutUs h2{
+text-align: center;
+padding-top: 5%;
+}
+#mainSentence {
+    font-size: 250%;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    animation: rainbow 10s ease-in-out 0.5s 5;
+}
+
+@keyframes rainbow {
+    50% {
+        color: #f8f2fd;
+    }
+
+    100% {
+        color: #49738A;
+    }
+}
+
+#aboutUs h3 {
+    margin-top: 1%;
+    font-size: 150%;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-left: 1%;
+}
+
+#text {
+    margin-top: 1%;
+    font-size: 110%;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    font-weight: inherit;
+    margin-left: 1%;
+}
+
+#homePageNav {
+    display: block;
+    margin-top: 2%;
+    margin-bottom: 0 auto;
+    color: black;
+    text-align: center;
+    grid-area: main;
+    height: 55vh;
+}
+
+#homePageNav p {
+    margin-left: 1%;
+    font-weight: bold;
+    font-size: 200%;
+    margin-top: 1%;
+    text-align: left;
+    color: black;
+
+}
+
+.navDisplay1 {
+    display: flex;
+    margin-top: 3%;
+    justify-content: center;
+    margin-right: 56%;
+}
+
+.option {
+    margin-left: 7%;
+}
+
+.link {
+    width: 10vw;
+    height: 15vh;
+    border-radius: 100%;
+}
+
+.spanStyle {
+    display: block;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+/* Contact Us */
+#gridContainerContactUs {
+    display: grid;
+    height: 150vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr 2fr 2fr 1fr;
+    grid-template-areas:
+        "header  header header"
+        "leftSide  main main"
+        "leftSide  main main"
+        "leftSide  main main"
+        "footer  footer footer";
+}
+
+#contactUsMain {
+    grid-area: main;
+    background-image: linear-gradient(rgba(102, 97, 97, 0.75), rgba(102, 97, 97, 0.75)), url(../static/backgroundImg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120vh;
+}
+
+#contactUsMain h1 {
+    margin-top: 73%;
+    margin-left: 3%;
+    font-size: 400%;
+    color: #1d2e36;
+    font-weight: bold;
+}
+
+#form {
+    background-color: #c6dde7;
+    display: block;
+    margin-top: 0 auto;
+    margin-bottom: 0 auto;
+    text-align: center;
+    grid-area: leftSide;
+    height: 120vh;
+}
+
+#formText {
+    font-size: 110%;
+    padding: 1%;
+    margin-top: 3%;
+    text-align: center;
+    color: black;
+}
+
+#formDiv {
+    text-align: center;
+    margin-top: 4%;
+}
+
+.labelElement {
+    font-size: 90%;
+    color: black;
+    font-weight: bold;
+    margin-top: 3%;
+}
+
+.inputElement {
+    margin-top: 2%;
+    height: 4vh;
+}
+
+#description {
+    height: 10vh;
+    margin-bottom: 10%;
+}
+
+#checkbox {
+    margin-left: 5%;
+}
+
+#addFile1 {
+    font-size: 80%;
+    color: black;
+    font-weight: bold;
+    margin-left: 1%;
+}
+
+#addFile2 {
+    margin-left: 22%;
+    color: black;
+}
+
+#submit {
+    margin-top: 8%;
+    height: 80%;
+    width: 40%;
+}
+
+#formOutput{
+    margin-top: 10%;
+    text-align: center;
+}

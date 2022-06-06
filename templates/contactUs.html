@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../static/chefIt.css">
+	<script defer src="../static/chefIt_JS.js"></script>
+</head>
+
+<body>
+	<div id="gridContainerContactUs">
+		<header>
+			<div id="logo">
+				<h1 >Chef<span>It</span></h1>
+				<img id="pageImage" src="../static/recipesLogo.jpg" alt="food logo">
+			</div>
+			<nav>
+				<ul>
+					<li><a href="../templates/homePage.html">Home Page</a></li>
+					<li><a href="../templates/GeneralPage.html"> Sign In</a></li>
+					<li><a href="../templates/GeneralPage.html"> Sign Up</a></li>
+					<li><a href="../templates/contactUs.html"> Contact Us </a></li>
+				</ul>
+			</nav>
+		</header>
+		<main id="contactUsMain">
+			<h1>Let Us Help You</h1>
+		</main>
+<form id="form" action="../templates/formOutPut.html"method="get">
+        <div id="formText" >If you are having any technical problems - please attach a print screen</div>
+        <div id="formDiv">
+            <label class="labelElement" for="fname" >First Name: *</label><br>
+            <input class="inputElement" type="text" id="fname" name="fname" pattern="[A-Za-z]{1,15}" required placeholder="Enter first name"><br><br>
+            <label class="labelElement" for="lname">Last Name: *</label><br>
+            <input class="inputElement" type="text" id="lname" name="lname"  pattern="[A-Za-z]{1,15}" required placeholder="Enter last name"><br><br>
+            <label class="labelElement" for="email">Email Address: *</label><br>
+            <input class="inputElement" type="email" id="email" name="email" required placeholder="Enter email address"><br><br>
+            <label class="labelElement" for="telephone">Phone Number: *</label><br>
+            <input class="inputElement" type="tel" id="telephone" name="telephone" pattern ="[0]{1}[5]{1}[0-9]{8}" required placeholder="Enter phone number" ><br><br>
+            <div id="description">
+                <label class="labelElement" for="description">Description:</label><br>
+                <input  type="text" id="description"name="description" ><br><br> 
+            </div>
+            <label class="labelElement" for="bug">technical problems</label>
+            <input id="checkbox" type="checkbox" id="bug"name="bug"  ><br><br>
+            <label id="addFile1" for="addedFile"> Attach File</label><br>
+            <input id="addFile2" type="file" id="addedFile"name="addedFile" ><br>
+            <input id="submit" type="submit" value="Submit">
+        </div>
+    </form> 
+
+	<footer>
+		<div class="containerfooter">
+			<div class="row">
+				<div class="footer-col">
+					<h3>Company</h3>
+					<ul class="links">
+						<li><a href="../templates/contactUs.html">Contact Us</a></li>
+						<li><a href="../templates/GeneralPage.html">Support</a></li>
+						<li><a href="../templates/GeneralPage.html">Privacy Policy</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h3>Follow Us</h3>
+					<div class="social-links">
+						<a href="../templates/GeneralPage.html"><i class="fab fa-facebook-f"><img src="../static/facebookLogo.png"
+									alt="facebook logo"></i></a>
+						<a href="../templates/GeneralPage.html"><i class="fab fa-twitter"></i><img src="../static/twitterLogo.png"
+								alt="twitter logo"></a>
+						<a href="../templates/GeneralPage.html"><i class="fab fa-instagram"></i><img src="../static/instagramLogo.jpg"
+								alt="instagram logo"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	</div>
+</body>
+
+</html>
