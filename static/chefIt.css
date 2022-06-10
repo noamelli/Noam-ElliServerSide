@@ -361,3 +361,17 @@ padding-top: 5%;
     margin-top: 10%;
     text-align: center;
 }
+#aboutMe{
+    text-align: center;
+    grid-area: main;
+    margin-top:10vh;
+}
+#aboutMe h1{
+    text-decoration: underline;
+}
+.generalDetails{
+    margin-bottom:5%;
+}
+.generalDetails h2{
+    text-decoration: underline;
+}

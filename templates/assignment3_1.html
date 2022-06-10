@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% block title %}Assignment3_!{% endblock %}
+
+{% block content %}
+		<div id="gridContainerHomePage">
+			<div id="aboutMe">
+				<h1>About Me</h1>
+					<div class="generalDetails">
+						{% for title, value in user_info.items() %}
+						<h3>{{ title|capitalize }}: {{ value|capitalize }}</h3>
+						{% endfor %}
+						<h3>Age: {{age|round}}</h3>
+					</div>
+				<div class="generalDetails">
+					{% if hobbies %}
+						<h2>My Hobbies:</h2>
+						<ul>
+							{% for hobbies in hobbies %}
+							<li>{{ hobbies }}</li>
+							{% endfor %}
+						</ul>
+					{%else%}
+						<h1> I dont have hobbies</h1>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+
+	{% endblock %}
