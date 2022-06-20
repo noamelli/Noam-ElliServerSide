@@ -1,27 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>assignment3_2</title>
-</head>
-<body>
-        <form action="/searchForm" method="get">
-            <label class="labelElement" for="fname" >First Name: *</label><br>
-            <input class="inputElement" type="text" id="fname" name="fname" pattern="[A-Za-z]{1,15}" required placeholder="Enter first name"><br><br>
-            <label class="labelElement" for="lname">Last Name: *</label><br>
-            <input class="inputElement" type="text" id="lname" name="lname"  pattern="[A-Za-z]{1,15}" required placeholder="Enter last name"><br><br>
-            <label class="labelElement" for="email">Email Address: *</label><br>
-            <input class="inputElement" type="email" id="email" name="email" required placeholder="Enter email address"><br><br>
-            <input type="submit">
+{% extends 'base.html' %}
+{% block title %}Assignment3_2!{% endblock %}
 
-            if
-        </form>
+{% block content %}
+<main id="aboutUs">
+    <div id="assignment3_grid">
+        <div class="userDetails">
+            <!--search form-->
+            <form action="/searchForm" method="get,post">
+                <h1 class="headerForm">Search for user</h1>
+                <label class="labelElement" for="fname">First Name: *</label><br>
+                <input class="inputElement" type="text" id="fname" name="fname" pattern="[A-Za-z]{1,15}"
+                       placeholder="Enter first name"><br><br>
+                <input type="submit" value="search">
+            </form>
+            {% if first_name %}
+            <h3>User Details</h3>
+            <h4>First name: {{ first_name }}</h4>
+            <h4>Last name: {{ last_name }}</h4>
+            <h4>Nickname: {{ nickName }}</h4>
+            <h4>Email: {{ email }}</h4>
+            {% endif %}
 
+            {% if message %}
+            <h4>{{ message }}</h4>
+            {% endif %}
 
-<!-- <form action="/registrationForm" method="post">-->
-<!--            <input type="text" name="username" placeholder="Username">-->
-<!--            <input type="password" name="password" placeholder="Password">-->
-<!--            <input type="submit">-->
-<!--        </form>-->
-</body>
-</html>
+            {% if user_dict %}
+            <ul>
+                <h3>Our Users</h3>
+                {% for k, v in user_dict.items() %}
+                <h4>user details</h4>
+                <li><h5>First Name: {{k}}</h5></li>
+                <li><h5>Last Name: {{ user_dict[k]['lastName'] }}</h5></li>
+                <li><h5>Nickname: {{ user_dict[k]['nickName'] }}</h5></li>
+                <li><h5>Email: {{ user_dict[k]['email'] }}</h5></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <!--register form-->
+        <div>
+            {% if message2 %}
+            <h4 class="text">{{ message2 }}</h4>
+            {% endif %}
+            {% if session['logedin']%}
+            <h1 class="text">Welcome, {{ session['nickName'] | upper() }}</h1>
+            {% else %}
+            <h1 id="registration">Registration</h1>
+            <form action="/registerForm" method="post">
+                <label class="labelElement" for="nickName">Nickname: *</label><br>
+                <input class="inputElement" type="text" id="nickName" name="nickName" pattern="[A-Za-z]{1,15}" required
+                       placeholder="Enter first name"><br><br>
+                <label class="labelElement" for="firstName">First Name: *</label><br>
+                <input class="inputElement" type="text" id="firstName" name="firstName" pattern="[A-Za-z]{1,15}"
+                       required placeholder="Enter first name"><br><br>
+                <label class="labelElement" for="lastName">Last Name: *</label><br>
+                <input class="inputElement" type="text" id="lastName" name="lastName" pattern="[A-Za-z]{1,15}" required
+                       placeholder="Enter last name"><br><br>
+                <label class="labelElement" for="email">email *</label><br>
+                <input class="inputElement" type="email" id="email" name="email" required
+                       placeholder="Enter email"><br><br>
+                <label class="labelElement" for="password">password *</label><br>
+                <input class="inputElement" type="password" id="password" name="password" required
+                       placeholder="Enter password"><br><br>
+                <input type="submit" value="Register">
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</main>
+{% endblock %}

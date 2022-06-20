@@ -7,11 +7,22 @@
     <script defer src="{{url_for('static',filename='chefIt_JS.js')}}"></script>
 </head>
 <body>
-   {% include('header.html') %}
-    {% block content %}
-            <h1>content</h1>
-    {% endblock %}
-    {% include('footer.html') %}
+{% include('header.html') %}
+{% block content %}
+<div class="hobbies">
+    <h1>My Hobbies</h1>
 
+    {% if hobbies %}
+    <ul>
+        {% for hobbies in hobbies %}
+        <li><h3>{{ hobbies }}</h3></li>
+        {% endfor %}
+    </ul>
+    {%else%}
+    <h3> I dont have hobbies</h3>
+    {% endif %}
+</div>
+{% endblock %}
+{% include('footer.html') %}
 </body>
 </html>

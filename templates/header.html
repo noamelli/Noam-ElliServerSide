@@ -1,14 +1,20 @@
 <header>
     <div id="logo">
-        <h1 >Chef<span>It</span></h1>
+        <h1>Chef<span>It</span></h1>
         <img id="pageImage" src="{{url_for('static',filename='recipesLogo.jpg')}}" alt="food logo">
     </div>
     <nav>
         <ul>
             <li><a href="/homepage">Home Page</a></li>
-            <li><a href="/general"> Sign In</a></li>
-            <li><a href="/general"> Sign Up</a></li>
             <li><a href="/contact"> Contact Us </a></li>
+            <li><a href="/assignment3_1">About Me</a></li>
+            <li><a href="/assignment3_2">Search For User</a></li>
+            {% if session['logedin'] %}
+            <li><a href="/log_out">Log Out</a></li>
+            <a>Loged-in, {{ session['nickName'] | upper() }}</a>
+            {% else %}
+            <li><a href="/registerForm">Register</a></li>
+            {% endif %}
         </ul>
     </nav>
 </header>
