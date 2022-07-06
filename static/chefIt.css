@@ -397,10 +397,12 @@ ul {
         "searchForm  registerForm "
         "searchForm  registerForm ";
 }
-.headerForm{
+
+.headerForm {
     margin-bottom: 1%;
     text-decoration: underline;
 }
+
 /*serach form*/
 
 .userDetails {
@@ -431,12 +433,126 @@ ul {
 }
 
 /*register form*/
-.text{
+.text {
     margin-top: 5%;
     margin-bottom: 2%;
 }
-#registration{
+
+#registration {
     margin-top: 5%;
     margin-bottom: 2%;
     text-decoration: underline;
+}
+
+#assignment4_grid {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr 4fr;
+    grid-template-areas:
+        "message  message message  "
+        "insert  update  delete  "
+        "insert  update delete  "
+        "usersList  usersList usersList  ";
+
+}
+
+#insert {
+    margin-left: 25%;
+    grid-area: insert;
+}
+
+#insert h1 {
+    text-decoration: underline;
+}
+
+#update {
+    margin-left: 25%;
+    grid-area: update;
+}
+
+#update h1 {
+    text-decoration: underline;
+}
+
+#delete {
+    margin-left: 25%;
+    grid-area: delete;
+}
+
+#delete h1 {
+    text-decoration: underline;
+}
+
+#list {
+    margin-top: 5%;
+    margin-left: 7%;
+    text-align: left;
+    grid-area: usersList;
+}
+
+#list h1 {
+    text-decoration: underline;
+}
+
+#message {
+    grid-area: message;
+}
+
+#message h3 {
+    text-align: center;
+    margin-top: 3%;
+}
+
+#jasonButton {
+    grid-area: jasonButton;
+    margin-left: 2%;
+    margin-top: 2%;
+
+}
+
+#assigment4B_container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 2fr 2fr;
+    grid-template-areas:
+        "jasonButton  jasonButton   "
+        "fe_form  be_form    "
+        "fe_form  be_form   ";
+
+}
+
+#feForm {
+    grid-area: fe_form;
+    margin-left: 5%;
+    margin-top: 1%;
+
+}
+
+#feSection {
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+#feForm h2 {
+    text-align: left;
+    text-decoration: underline;
+    margin-bottom: 5%;
+}
+
+#beForm {
+    grid-area: be_form;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+#beForm h2 {
+    text-align: left;
+    text-decoration: underline;
+    margin-bottom: 5%;
+}
+
+.showUsers {
+    margin-top: 5%;
 }

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Fetch - FrontEnd{% endblock %}
+
+{% block content %}
+<script defer src="{{url_for('static', filename='assignment_4.js')}}"></script>
+
+<div id="aboutUs">
+    <div id="assigment4B_container">
+        <form id="jasonButton" action="/assignment4/users" method="get">
+            <input id="jason" type="submit" value="Show table ‘users’ from DB in a json format">
+        </form>
+        <form id="feForm">
+            <h2> Frontend form</h2>
+            <label class="labelElement" for="id"> Enter User ID</label><br>
+            <input class="inputElement" type="text" id="id" name="id" maxlength="20" required
+                   placeholder="Enter id"><br><br>
+            <button onclick="myFunction()">Click</button>
+        </form>
+        <section id="feSection"></section>
+        <div id="beForm">
+            <h2> Backend form</h2>
+            <form action="/assignment4/outer_source" method="get">
+                <label class="labelElement" for="id_be"> Enter User ID</label><br>
+                <input class="inputElement" type="text" id="id_be" name="id_be" maxlength="20" required
+                       placeholder="Enter id"><br><br>
+                <input type="submit" value="Get User">
+
+            </form>
+            {% if session.users %}
+            <div class="showUsers">
+                <img src="{{session.users.avatar}}" alt="Profile Picture"/>
+                <div>
+                    <span>id: {{ session.users.id }} </span>
+                    <span> ,Full name: {{session.users.firstName}} {{session.users.lastName}}</span>
+                    <br>
+                    <a href="mailto:{{session.users.email}}">Send Email</a>
+                </div>
+                <hr>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}Assignment_4{% endblock %}
+
+{% block content %}
+<main id="aboutUs">
+    <div id="assignment4_grid">
+        <div id="insert">
+            <h1>Insert form</h1>
+            <form action="/insert_user" method="post">
+                <label class="labelElement" for="mail">email *</label><br>
+                <input class="inputElement" type="email" id="mail" name="mail" maxlength="20" required
+                       placeholder="Enter email"><br><br>
+                <label class="labelElement" for="firstName">First Name: *</label><br>
+                <input class="inputElement" type="text" id="firstName" name="firstName" pattern="[A-Za-z]{1,20}"
+                       required placeholder="Enter first name"><br><br>
+                <label class="labelElement" for="lastName">Last Name: *</label><br>
+                <input class="inputElement" type="text" id="lastName" name="lastName" pattern="[A-Za-z]{1,20}" required
+                       placeholder="Enter last name"><br><br>
+                <label class="labelElement" for="nickName">Nickname: *</label><br>
+                <input class="inputElement" type="text" id="nickName" name="nickName" pattern="[A-Za-z]{1,20}" required
+                       placeholder="Enter first name"><br><br>
+                <label class="labelElement" for="password">password *</label><br>
+                <input class="inputElement" type="password" id="password" name="password" maxlength="10" required
+                       placeholder="Enter password"><br><br>
+                <input type="submit" value="Insert">
+            </form>
+        </div>
+        <div id="update">
+            <h1>Update form</h1>
+            <form action="/update_user" method="post">
+                <label class="labelElement" for="mail_">email *</label><br>
+                <input class="inputElement" type="email" id="mail_" name="mail_" maxlength="20" required
+                       placeholder="Enter email"><br><br>
+                <label class="labelElement" for="Fname">First Name: *</label><br>
+                <input class="inputElement" type="text" id="Fname" name="Fname" pattern="[A-Za-z]{1,20}"
+                       required placeholder="Enter first name"><br><br>
+                <label class="labelElement" for="Lname">Last Name: *</label><br>
+                <input class="inputElement" type="text" id="Lname" name="Lname" pattern="[A-Za-z]{1,20}" required
+                       placeholder="Enter last name"><br><br>
+                <label class="labelElement" for="nick">Nickname: *</label><br>
+                <input class="inputElement" type="text" id="nick" name="nick" pattern="[A-Za-z]{1,20}" required
+                       placeholder="Enter first name"><br><br>
+                <label class="labelElement" for="pass">password *</label><br>
+                <input class="inputElement" type="password" id="pass" name="pass" maxlength="10" required
+                       placeholder="Enter password"><br><br>
+                <input type="submit" value="Update">
+            </form>
+        </div>
+        <div id=delete>
+            <h1>Delete form</h1>
+            <form action="/delete_user" method="post">
+                <label class="labelElement" for="email">email *</label><br>
+                <input class="inputElement" type="email" id="email" name="email" maxlength="20" required
+                       placeholder="Enter email"><br><br>
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+        <div id="message">
+            <h3> {{ session['message'] | upper() }}</h3>
+        </div>
+        <div id=list>
+            <h1>User list</h1>
+            {% for user in users %}
+            <h4>Email: {{ user.email }}, First Name: {{ user.FirstName }}, Last Name: {{ user.LastName }}, Nickname: {{
+                user.Nickname }}</h4>
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+</main>
+<script src="../../../static/assignment_4.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='assignment_4.css')}}">
+
+{% endblock %}

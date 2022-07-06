@@ -3,10 +3,13 @@ from flask import url_for
 from flask import render_template
 from flask import request, session, jsonify
 from datetime import timedelta
+import mysql.connector
+from pages.assignment_4.assignment_4 import assignment_4
 
 app = Flask(__name__)
+app.register_blueprint(assignment_4)
 
-app.secret_key = '473'
+app.secret_key = '123'
 app.config['SESSION_PERMANENT'] = True
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=1440)
 
