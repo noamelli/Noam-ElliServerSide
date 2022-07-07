@@ -175,3 +175,22 @@ def restapi_users(ID):
         return_dict = {'first_name': user_list.firstName,
                        'last_name': user_list.lastName}
         return jsonify(return_dict)
+
+#users -insert query
+# insert into users (email, FirstName,LastName,Nickname, password_) VALUES
+# ('yosi@gmail.com', 'yosi', 'cohen','yosiC','475333');
+# insert into users (email, FirstName,LastName,Nickname, password_) VALUES
+# ('li90@gmail.com', 'li', 'coren','lico','231111');
+# insert into users (email, FirstName,LastName,Nickname, password_) VALUES
+# ('idor@gmail.com', 'ido', 'dor','idodo','222444');
+# insert into users (email, FirstName,LastName,Nickname, password_) VALUES
+# ('sati@gmail.com', 'neta', 'meir','dubi','234235');
+# insert into users (email, FirstName,LastName,Nickname, password_) VALUES
+# ('noami@gmail.com', 'noam', 'elli','noami','123456');
+
+#users_partc -insert query
+# insert into users_partc values ('1','noam','elli','12312')
+# insert into users_partc values ('2','ido','cohen','324234')
+# insert into users_partc values ('3','neta','meir','234234')
+# insert into users_partc values ('4','shay','cohen','23423')
+# insert into users_partc values ('5','noam','omer','2423')
